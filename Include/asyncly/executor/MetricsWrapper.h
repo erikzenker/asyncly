@@ -63,7 +63,7 @@ class MetricsWrapper : public IExecutor,
     post_periodically(const clock_type::duration& t, CopyableTask f) override;
     ISchedulerPtr get_scheduler() const override;
 
-    std::vector<prometheus::MetricFamily> Collect() const override;
+    std::vector<prometheus::MetricFamily> Collect() override;
 
   private:
     const IExecutorPtr executor_;
@@ -171,7 +171,7 @@ std::shared_ptr<asyncly::IScheduler> MetricsWrapper<ClockType>::get_scheduler() 
 }
 
 template <typename ClockType>
-std::vector<prometheus::MetricFamily> MetricsWrapper<ClockType>::Collect() const
+std::vector<prometheus::MetricFamily> MetricsWrapper<ClockType>::Collect()
 {
     return metrics_->registry_.Collect();
 }
