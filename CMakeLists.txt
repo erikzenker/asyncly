@@ -80,7 +80,9 @@ endif()
 target_include_directories(asyncly PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/Include>)
 target_link_libraries(asyncly PUBLIC Boost::thread prometheus-cpp::core function2::function2)
 
-add_subdirectory(Test)
+if(ENABLE_TESTING)
+  add_subdirectory(Test)
+endif()
 
 # ----------------------------------------------------------------------------------------
 # Installation
