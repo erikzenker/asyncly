@@ -1,5 +1,7 @@
 add_subdirectory(Header)
 add_subdirectory(Mocks)
-add_subdirectory(Performance)
+if(ENABLE_BENCHMARK)
+    add_subdirectory(Performance)
+endif()    
 add_subdirectory(Utils)
 add_subdirectory(Unit)
