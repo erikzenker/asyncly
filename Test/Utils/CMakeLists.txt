@@ -17,7 +17,7 @@ add_library(asyncly_test_utils
   )
 
 target_include_directories(asyncly_test_utils PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/Include>)
-target_link_libraries(asyncly_test_utils PUBLIC asyncly GTest::gmock)
+target_link_libraries(asyncly_test_utils PUBLIC asyncly GTest::gmock gtest)
 
 
 install(DIRECTORY Include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
